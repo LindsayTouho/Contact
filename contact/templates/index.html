@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=yes">
+    <title>{{ config['TITLE'] }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://v.vaptcha.com/v3.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <style>
+        body{
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form class="col s12" id="send_content">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="content" class="materialize-textarea" name="content" required="required"></textarea>
+                    <label for="content">Message</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" class="validate" name="name" required="required">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">contacts</i>
+                    <input id="contact" type="text" class="validate" name="contact" required="required">
+                    <label for="contact">Contact</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light black right" type="submit" name="action" id="submit">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
